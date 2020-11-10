@@ -2,7 +2,7 @@
 
 terraform init
 time terraform apply -auto-approve
-# sleep 60
+sleep 60
 
 ansible-playbook disable_selinux.yml
 # ansible-galaxy install andrewrothstein.etcd-cluster
