@@ -5,5 +5,7 @@ ${name} ansible_host=${etcd_external_ip_address[index]} # ${etcd_internal_ip_add
 %{ endfor ~}
 
 [etcd-master]
-${name}[0:2]
+%{ for index, name in etcd_name ~}
+${name}[0:[index]]
+%{ endfor ~}
 %{ endif }
