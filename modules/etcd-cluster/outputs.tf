@@ -7,7 +7,7 @@ output "etcd_internal_ip_address" {
 }
 
 resource "local_file" "AnsibleInventory" {
-  content = templatefile("modules/etcd-cluster/inventory.tmpl",
+  content = templatefile("inventory.tmpl",
     {
 
       etcd_name                = yandex_compute_instance.etcd.*.name,
