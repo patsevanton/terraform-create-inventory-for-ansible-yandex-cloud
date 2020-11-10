@@ -2,11 +2,12 @@
 
 terraform init
 time terraform apply -auto-approve
-sleep 60
+sleep 90
 
+cat inventory.ini
 ansible-playbook disable_selinux.yml
-# ansible-galaxy install andrewrothstein.etcd-cluster
-# ansible-playbook etcd_cluster.yml
+ansible-galaxy install andrewrothstein.etcd-cluster
+ansible-playbook etcd_cluster.yml
 
 # Zookeeper
 # ansible-galaxy install andrewrothstein.zookeeper-cluster
